@@ -31,7 +31,7 @@ jobs:
 
       - name: Clone Private Blog Posts # 拉取私有仓库blog-posts内容到_posts
         run: |
-          git clone https://x-access-token:${{ secret.BLOG_POSTS_TOKEN }}@github.com/zhoulinhu/blog-posts.git temp-posts
+          git clone https://x-access-token:${{ secrets.BLOG_POSTS_TOKEN }}@github.com/zhoulinhu/blog-posts.git temp-posts
           mkdir -p _posts
           cp -r temp-posts/_posts/*.md _posts/ || echo "No _posts found"
           rm -rf temp-posts
